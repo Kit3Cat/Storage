@@ -5,3 +5,4 @@
 ![Image alt](https://github.com/Kit3Cat/Storage/blob/main/Tree.jpg)
 ![Image alt](https://github.com/Kit3Cat/Storage/blob/main/original.png)
 ![Image alt](https://github.com/Kit3Cat/Storage/blob/main/vanila.jpg)
+![Image alt](https://github.com/Kit3Cat/Storage/blob/main/cherry.png)
