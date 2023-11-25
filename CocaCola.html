@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#Car{
+ margin-top: 60px;
+position: absolute; // расположение рисунка отсчитывается от верхнего левого угла страницы
+top: 50%; // отступ сверху
+left: 50%; // отступ слева
+transform: translate(-50%, -50%); // перемещаем на середину
+-webkit-filter: drop-shadow(5px 5px 5px #4682B4); // тень для png-рисунка
+filter: drop-shadow(5px 5px 5px #4682B4); // тень для png-рисунка
+}
+
+body {margin:0
+color: white;
+ text-align: center;
+ font-size: 24px;
+ line-height: 2;
+}
+img {
+    border-radius: 10px; 
+   }
+
+.gr_header 
+{ grid-area: header; background-color: 	#FF0000;
+  position: fixed;
+  text-decoration: none;
+  overflow: hidden;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+  padding: 5px 20px;
+}
+.gr_footer 
+{ 
+  grid-area: footer; background: #696969;
+  text-decoration: none;
+  overflow: hidden;
+  padding: 25px 0px;
+  top: 0;
+  width: 100%;
+}
+.gr_main 
+{ grid-area: main; background: #FFFAFA;
+ padding: 80px;
+
+ height: 1700px;
+}
+.gr1_main 
+{ grid-area: main; background: #FCF8F2 ;
+ padding: 30px;
+ border-radius: 10px; 
+}
+.gr2_main 
+{ grid-area: main; background: #EE8282   ;
+ padding: 30px;
+  margin-top:30px;
+margin-left:30px;
+margin-right:30px;
+border-radius: 10px; 
+}
+.gr_left 
+{ grid-area: left; background: #E5FBFD;
+ margin-top: 10px;
+}
+.gr1_left{
+grid-area: left; background: #FCFCF4  ;
+ padding: 30px;
+ border-radius: 10px; 
+}
+.gr2_left{
+grid-area: left; background: #EFEBC5    ;
+ padding: 30px;
+  margin-top:30px;
+margin-left:30px;
+margin-right:30px;
+border-radius: 10px; 
+}
+.gr_right 
+{ grid-area: right; background: #F6EDFD;
+border-radius: 10px; 
+}
+.gr1_right
+{grid-area: right; background: #EEF0F8;
+ padding: 30px;
+ border-radius: 10px; 
+}
+.gr2_right
+{grid-area: right; background: #EFC5D8 ;
+ padding: 30px;
+  margin-top:30px;
+margin-left:30px;
+margin-right:30px;
+border-radius: 10px; 
+}
+.gr
+{
+ display: grid;
+ grid-template-areas: "header header header"
+					  "left left left"
+					  "main main main"
+					  "right right right"
+					  "footer footer footer";
+ grid-template-columns: 80px 1fr 80px;
+ grid-template-rows: 60px
+					 2fr
+					 5fr
+					 2fr
+					 250px;
+ min-height: 100vh;
+}
+@media screen and (max-width: 600px) {
+ .gr {
+ grid-template-areas: "header"
+					  "left"
+					  "main"
+					  "right"
+					  "footer";
+ grid-template-columns: 100%;
+ grid-template-rows: 100px
+					 50px
+					 1fr
+					 50px
+					 30px;
+ }
+ }
+.gr1{
+display: grid;
+ grid-template-areas: "left"
+                      "main"
+					  "right";				  
+ grid-template-columns: 100%;
+ grid-template-rows: 1fr 1fr 1fr;
+ min-height: 100vh;
+}
+.gr2{
+display: grid;
+ grid-template-areas: "left main right";			  
+ grid-template-columns: 1fr 1fr 1fr;
+ grid-template-rows: 100%;
+ min-height: 100vh;
+  font-family: segoe print;
+ font-size: 44px;
+}
+.gr_header a {
+margin-left:20px;
+ font-family: Snell Roundhand, cursive;
+ float: left;
+ color: #f2f2f2;
+ text-decoration: none;
+ text-align: center;
+ padding 20px 0px;
+ font-size: 32px;
+}
+.gr_header a:hover {
+ font-weight: 700;
+ color: #404040;
+ }
+.header_right{
+ float: right;
+ padding: 0px 40px;
+}
+ 
+ .gr_footer a{
+ font-family: Snell Roundhand, cursive;
+ float: center;
+ color: #f2f2f2;
+ text-align: center;
+ text-decoration: none;
+ font-size: 34px;
+}
+.gr_footer a:hover {
+ font-weight: 700;
+ color: #404040;
+ }
+
+.centered {
+ z-index: 1;
+ Color: #F2E34B  ;
+ text-shadow: black 0 0 4px;
+ font-family: Comic Sans MS, cursive;
+ font-size: 44px;
+ position: absolute;
+ top: 15%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+}
+</style>
+<script>
+var flag=false;
+function playAudio(url) {
+if (!flag){
+ var audio = new Audio(url);
+ audio.loop=true;
+ audio.play();
+ flag=true;
+ }
+}
+</script>
+</head>
+<body class="gr">
+ <header class="gr_header">
+ <a href="#Car">CocaCola Company</a>
+ <header class="header_right">
+ <a href="#House">Новости</a>
+ <a href="#New">Продукция</a>
+ </header>
+ </header>
+ <main class="gr_main">
+ <div class="gr1">
+  <aside class="gr1_left">
+ <div id="House">
+<img src="images/House.jfif" width=30% height=30% align=left> 
+  <p>
+  Традиционный
+  Рождественский караван Coca-Cola, стартовавший в пятницу по маршруту Владивосток — Москва, включающему 10 городов, будет посвящен в этом году атлетам Специальной 
+  Олимпиады, Всемирные зимние игры которой впервые пройдут в январе 2023 года в Казани, сообщает компания.
+  Старт 21-му по счету Каравану был дан на проходящем в Москве международном форуме гражданского участия #МЫВМЕСТЕ. В связи с противоэпидемическими ограничениями с 2020 года 
+  Караван переехал в онлайн,
+  в этом году виртуальный формат сохранится.   
+  </p>
+  </aside> 
+  <aside class="gr1_main">
+ <div id="PostCard">
+ <img src="images/PostCard.png" width=30% height=30% align=right> 
+ <p>
+ В компании напомнили, что в 2000 году ее сотрудники компании решили воплотить в жизнь ролик Coca-Cola "Праздник к нам приходит",
+ и привезли подарки в детский дом на фирменном грузовичке. "Через год акцию повторили — так зародилась традиция. Компания уже не 
+ только дарила подарки, но и организовывала для детей новогодние представления. К 2013 году Караван охватывал 64 города России, в 
+ нем участвовали почти 8 тысяч воспитанников детских домов и пациентов больниц, а партнерами были десятки благотворительных фондов 
+ и некоммерческих организаций", - отметили в компании.
+ </p>
+ </aside>
+  <aside class="gr1_right">
+ <div id="Tree">
+ <img src="images/Tree.jpg" width=30% height=30% align=left> 
+ <p>
+ Три года назад Coca-Cola в России сфокусировалась на социализации подростков с ментальными, физическими и сенсорными особенностями и
+ начала организовывать инклюзивные праздники, приглашая на них всех, в том числе молодых людей с особенностями развития и ограниченными
+ возможностями здоровья, а также подростков, находящихся в трудной жизненной ситуации. Помимо проведения каравана, Coca-Cola в России для
+ развития инклюзивного общества вместе с Фондом "Обнаженные сердца" строит инклюзивные игровые площадки в разных городах страны — к декабрю 
+ 2021 года открыто уже 13 площадок. В России она также организует юнифайд-матчи, когда в одной команде играют атлеты с особенностями развития
+ и без. Атлетов привлекают и к работе на спортивных мероприятиях, партнером которых является Coca-Cola.
+</p>
+</aside>
+ </main>
+ <aside class="gr_left">
+ <div id="Car">
+<img src="images/Car.jfif" width=65% height=auto> 
+<div id="happy_year">
+ <div class="centered">
+ <h1 onclick="playAudio('images/cocacola.mp3')">Happy New Year!</h1>
+</div>
+</div>
+ </aside>
+ <aside class="gr_right">
+ <div id="New">
+<div class="gr2">
+  <aside class="gr2_left">
+ <div id="House">
+<img src="images/vanila.jpg" width=100% height=100% align=main> 
+<p>Coca-Cola Vanilla</p>
+  </aside> 
+  <aside class="gr2_main">
+ <div id="PostCard">
+ <img src="images/original.png" width=60% height=60% align=main> 
+ <p>Coca-Cola Original</p>
+ </aside>
+  <aside class="gr2_right">
+ <div id="Tree">
+ <img src="images/cherry.png" width=90% height=90% align=main> 
+ <p>Coca-Cola Cherry</p>
+</aside>
+ </aside>
+ <footer class="gr_footer">
+ <a href="#contact">Контакты</a>
+ </footer>
+
+
+</body>
+</html>
